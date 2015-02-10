@@ -73,7 +73,7 @@
     <SDKReference Include="TestPlatform, Version=12.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\ApiTest.cs" />
+    <Compile Include="Api\ApiIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +94,10 @@
     <ProjectReference Include="..\Tickspot.Api\Tickspot.Api.csproj">
       <Project>{20b96475-8e6f-45d6-ae0c-99c0a47d4091}</Project>
       <Name>Tickspot.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tickspot.Common\Tickspot.Common.csproj">
+      <Project>{bca17931-7620-4ab3-b7d6-14775d9130ee}</Project>
+      <Name>Tickspot.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

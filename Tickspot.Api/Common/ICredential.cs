@@ -1,4 +1,4 @@
-﻿namespace Tickspot.Api.Client
+﻿namespace Tickspot.Api.Common
 {
     public interface ICredential
     {

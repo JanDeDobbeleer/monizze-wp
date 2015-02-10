@@ -81,18 +81,35 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="Common\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\Credentials.cs" />
-    <Compile Include="Client\ICredential.cs" />
     <Compile Include="Client\RestClient.cs" />
+    <Compile Include="Client\TickSpotClient.cs" />
+    <Compile Include="Common\CredentialManager.cs" />
+    <Compile Include="Common\Credentials.cs" />
+    <Compile Include="Common\ICredential.cs" />
+    <Compile Include="Common\ICredentialManager.cs" />
+    <Compile Include="Common\StoreToCache.cs" />
+    <Compile Include="Model\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <TargetPlatform Include="Windows, Version=8.1" />
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tickspot.Common\Tickspot.Common.csproj">
+      <Project>{bca17931-7620-4ab3-b7d6-14775d9130ee}</Project>
+      <Name>Tickspot.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
