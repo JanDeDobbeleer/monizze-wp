@@ -1,1 +1,1 @@
-# TickSpot
+# My Monizze
