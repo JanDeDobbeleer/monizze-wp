@@ -5,14 +5,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:Monizze.Model"
+    xmlns:controls="using:Monizze.Controls"
     mc:Ignorable="d"
     Background="White"
     DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
     RequestedTheme="Dark">
     
     <Page.Resources>
-       <ResourceDictionary>
-           <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
                <ResourceDictionary Source="../Themes/MainViewTheme.xaml"/>
            </ResourceDictionary.MergedDictionaries>
        </ResourceDictionary>
@@ -33,20 +34,13 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle Grid.Row="0" Fill="{StaticResource MonizzeDarkBlue}" VerticalAlignment="Top" Height="40" Margin="0,-30,0,0"/>
-        <Border Grid.Row="0" Padding="0,0,0,5" Background="{StaticResource MonizzeDarkBlue}">
-            <StackPanel >
-                <Image Source="../Assets/Images/userImage.png" Height="50"/>
-                <TextBlock Foreground="White" FontSize="20" Text="{Binding Name}" HorizontalAlignment="Center" Margin="0,10,0,0" />
-                <TextBlock Foreground="White" FontSize="40" Text="{Binding Balance}" HorizontalAlignment="Center" Margin="0,10,0,0" />
-            </StackPanel>
-        </Border>
-        <ListView Grid.Row="1" Margin="12,0,12,0" ItemContainerStyle="{StaticResource UnanimatedListViewItemStyle}" ItemsSource="{Binding Transactions}" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=1}">
+       <ListView Grid.Row="1" x:Name="ListView" Margin="12,0,12,0" ItemContainerStyle="{StaticResource UnanimatedListViewItemStyle}" ItemsSource="{Binding Transactions}" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=1}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,10,0,0">
@@ -65,6 +59,66 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ProgressRing Grid.Row="1" Style="{StaticResource ProgressRingStyle}" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Border Grid.Row="0" Padding="0,0,0,5" Background="{StaticResource MonizzeDarkBlue}">
+            <StackPanel >
+                <TextBlock Foreground="White" FontSize="40" Text="{Binding Balance}" HorizontalAlignment="Center" Margin="0,10,0,0" />
+                <controls:AutoHideBar ScrollControl="{Binding ElementName=ListView}">
+                    <StackPanel>
+                        <Image Source="../Assets/Images/userImage.png" Height="50" />
+                        <TextBlock Foreground="White" FontSize="20" Text="{Binding Name}" HorizontalAlignment="Center"
+                                   Margin="0,10,0,0" />
+                    </StackPanel>
+                </controls:AutoHideBar>
+            </StackPanel>
+        </Border>-->
+        <!--<ProgressRing Style="{StaticResource ProgressRingStyle}" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </Grid>-->
+
+    <Grid x:Name="LayoutRoot">
+        <Rectangle Fill="{StaticResource MonizzeDarkBlue}" VerticalAlignment="Top" Height="40" Margin="0,-30,0,0"/>
+        <Grid x:Name="ContentPanel">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--<Border Grid.Row="0" Padding="0,0,0,5" Background="{StaticResource MonizzeDarkBlue}">
+                <TextBlock Foreground="White" FontSize="40" Text="{Binding Balance}" HorizontalAlignment="Center" Margin="0,10,0,0" />
+            </Border>-->
+            <!-- Note the ListHeader, small tip to make room for the NavigationBar when on top -->
+            <ListView x:Name="LongList" Grid.Row="1" Background="Transparent" Margin="12,0,12,0" ItemContainerStyle="{StaticResource UnanimatedListViewItemStyle}" ItemsSource="{Binding Transactions}">
+                <ListView.Header>
+                    <Grid Height="180" x:Name="Header"/>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="DarkGray" Grid.Row="0" Grid.Column="0" Text="{Binding TimeStamp, Converter={StaticResource TimeStampConverter}}" FontSize="{StaticResource TextStyleMediumFontSize}"/>
+                            <TextBlock Foreground="Black" Grid.Row="1" FontWeight="SemiBold" Grid.Column="0" TextWrapping="WrapWholeWords" FontSize="{StaticResource TextStyleLargeFontSize}" Text="{Binding MerchantName}"/>
+                            <TextBlock Foreground="{Binding Amount, Converter={StaticResource AmountForegroundConverter}}" Margin="5,0,0,0" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource TextStyleLargeFontSize}" Text="{Binding Amount}" VerticalAlignment="Bottom"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Declared after so it overlays the LongList, docked on top of the UI -->
+            <controls:AutoHideBar Grid.Row="1" ScrollControl="{Binding ElementName=LongList}"
+                                  Margin="-12,0" Style="{StaticResource AutoHideBarStyle}" x:Name="AutoHideBar" MinimumOffsetScrollingDown="{Binding ElementName=Header, Path=Height}">
+                <StackPanel>
+                    <Image Source="../Assets/Images/userImage.png" Height="50" />
+                    <TextBlock Foreground="White" FontSize="20" Text="{Binding Name}" HorizontalAlignment="Center"
+                                   Margin="0,10,0,10" />
+                </StackPanel>
+            </controls:AutoHideBar>
+            <ProgressRing Grid.Row="1" Style="{StaticResource ProgressRingStyle}" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Grid>
+
     </Grid>
 </model:NavigationAwarePage>

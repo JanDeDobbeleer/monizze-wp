@@ -87,6 +87,7 @@ namespace Monizze.ViewModel
 
         private async Task Refresh()
         {
+            Transactions = new List<Transaction>();
             Loading = true;
             var account = await _client.GetAccount();
             if (account == null)
@@ -98,10 +99,12 @@ namespace Monizze.ViewModel
                 Name = account.FirstName + " " + account.LastName;
                 Balance = "€" + account.Balance;
             }
-            Transactions = await _client.GetTransactions();
+            var temp = await _client.GetTransactions();
+            Loading = false;
+            Transactions = temp;
+            Transactions.AddRange(await  _client.GetTransactions());
             if (Transactions == null)
                 await ShowMessage("Your transactions could not be loaded");
-            Loading = false;
         }
 
         private async Task ShowMessage(string message)

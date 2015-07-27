@@ -87,9 +87,11 @@
     <Compile Include="Behaviours\EnterKeyDownBehaviour.cs" />
     <Compile Include="Behaviours\PageOrientation.cs" />
     <Compile Include="Behaviours\StatusbarBehaviour.cs" />
+    <Compile Include="Controls\AutoHideBar.cs" />
     <Compile Include="Converters\AmountForegroundConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\TimeStampConverter.cs" />
+    <Compile Include="Helpers\ClipToBounds.cs" />
     <Compile Include="Model\INavigable.cs" />
     <Compile Include="Model\INavigationService.cs" />
     <Compile Include="Model\NavigationAwarePage.cs" />

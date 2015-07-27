@@ -92,7 +92,7 @@ namespace Monizze.Api.Client
                 {
                     var parameters = new List<Parameter>
                     {
-                        new Parameter {Name = "count", Value = "50"},
+                        new Parameter {Name = "count", Value = "100"},
                         new Parameter {Name = "since_id", Value = transactionId}
                     };
                     var response = await client.GetAsync("/en/api/json/history" + GetQueryRequestParameters(parameters));
@@ -145,7 +145,7 @@ namespace Monizze.Api.Client
         private string GetToken(string xtime)
         {
             const int version = 1;
-            var token = string.Format("{0}{1}PinchMon", xtime, version);
+            var token = $"{xtime}{version}PinchMon";
             return ComputeMD5(token);
         }
 

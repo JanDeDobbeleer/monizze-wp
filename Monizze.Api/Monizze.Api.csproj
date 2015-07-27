@@ -83,6 +83,7 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\MockClient.cs" />
     <Compile Include="Client\MonizzeClient.cs" />
     <Compile Include="Common\StoreToCache.cs" />
     <Compile Include="Model\Account.cs" />
