@@ -5,14 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:behaviours="using:Monizze.Behaviours"
     xmlns:model="using:Monizze.Model"
+    xmlns:behaviors="using:Monizze.Behaviors"
     mc:Ignorable="d"
     Background="{StaticResource MonizzeDarkBlue}"
     DataContext="{Binding LoginViewModel, Source={StaticResource Locator}}"
-    behaviours:PageOrientation.SupportedOrientations="Portrait"
     RequestedTheme="Dark">
-    
+
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -22,31 +21,27 @@
         </ResourceDictionary>
     </Page.Resources>
 
-
-    <interactivity:Interaction.Behaviors>
-        <behaviours:StatusBarBehavior ForeGround="White"/>
-    </interactivity:Interaction.Behaviors>
-
     <Grid>
         <ProgressRing Style="{StaticResource ProgressRingStyle}" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <TextBlock Text="My Monizze" VerticalAlignment="Top" Margin="0,20,0,0"  HorizontalAlignment="Center" FontSize="30" FontWeight="SemiBold"/>
         <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="0,0,0,20" Visibility="{Binding Loading, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=1}">
             <TextBox PlaceholderText="email or phone number" InputScope="EmailSmtpAddress" Text="{Binding UserName, Mode=TwoWay}" Margin="12,10,12,0"
-                            SelectionHighlightColor="{StaticResource MonizzeOrange}" Foreground="{StaticResource MonizzeLightBlue}" BorderBrush="Transparent" Style="{StaticResource TextBoxStyle}" TabIndex="1">
+                            SelectionHighlightColor="{StaticResource MonizzeOrange}" Foreground="{StaticResource MonizzeLightBlue}" BorderBrush="Transparent" Style="{StaticResource UserNameTextBoxStyle}" TabIndex="1">
                 <interactivity:Interaction.Behaviors>
-                    <behaviours:EnterKeyDownBehaviour/>
+                    <behaviors:EnterKeyDownBehavior/>
                 </interactivity:Interaction.Behaviors>
             </TextBox>
             <PasswordBox PlaceholderText="password" Password="{Binding Password, Mode=TwoWay}" Margin="12,15,12,20"
-                                 Foreground="{StaticResource MonizzeLightBlue}" BorderBrush="Transparent" Style="{StaticResource PasswordBoxStyle}" SelectionHighlightColor="{StaticResource MonizzeOrange}" TabIndex="2">
+                                 Foreground="{StaticResource MonizzeLightBlue}" BorderBrush="Transparent" 
+                         Style="{StaticResource PasswordBoxStyle}" SelectionHighlightColor="{StaticResource MonizzeOrange}" TabIndex="2">
                 <interactivity:Interaction.Behaviors>
-                    <behaviours:EnterKeyDownBehaviour/>
+                    <behaviors:EnterKeyDownBehavior/>
                 </interactivity:Interaction.Behaviors>
             </PasswordBox>
             <Button Content="Login" Command="{Binding LoginCommand}"
-                    Style="{StaticResource ButtonStyle}"
-                    Margin="12,0,12,10"
-                    Foreground="White" TabIndex="3" IsTabStop="True"/>
+                            Style="{StaticResource ButtonStyle}"
+                            Margin="12,0,12,10" Template="{StaticResource ButtonControlTemplate}"
+                            Foreground="White" TabIndex="3" IsTabStop="True"/>
             <HyperlinkButton HorizontalAlignment="Center" Command="{Binding ForgotCommand}">
                 <TextBlock  FontSize="15" Foreground="White">
                         <Underline>

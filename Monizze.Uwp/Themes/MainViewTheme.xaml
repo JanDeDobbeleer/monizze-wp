@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="using:Monizze.Converters">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="UnanimatedListViewItem.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <converters:AmountForegroundConverter x:Key="AmountForegroundConverter"/>
+    <converters:TimeStampConverter x:Key="TimeStampConverter"/>
+    
+</ResourceDictionary>
