@@ -131,6 +131,7 @@
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Implementations\DeviceInfo.cs" />
     <Compile Include="Implementations\Logger.cs" />
     <Compile Include="Interfaces\ICredentialManager.cs" />

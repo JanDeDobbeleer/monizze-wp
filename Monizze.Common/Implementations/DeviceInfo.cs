@@ -1,71 +1,71 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Windows.ApplicationModel;
 using Windows.Networking.Connectivity;
-using Windows.Networking.PushNotifications;
-using Windows.Security.Cryptography;
-using Windows.Security.Cryptography.Core;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.System.Profile;
-using Windows.UI.Xaml;
+using Monizze.Common.Extensions;
 using Monizze.Common.Interfaces;
 
 namespace Monizze.Common.Implementations
 {
     public class DeviceInfo : IDeviceInfo
     {
-        public string AppVersion { get; set; }
-        public string Uuid { get; set; }
-        public string DeviceName { get; set; }
+        public string AppVersion => GetAppVersion();
+        public string Uuid => GetDeviceId();
+        public string DeviceName => GetDeviceName();
 
-        public DeviceInfo()
-        {
-            Uuid = GetDeviceId();
-            GetDeviceInfo();
-            AppVersion = GetAppVersion();
-        }
+        private string _appVersion = string.Empty;
+        private string _deviceId = string.Empty;
+        private string _deviceName = string.Empty;
 
         private string GetDeviceId()
         {
-            var token = HardwareIdentification.GetPackageSpecificToken(null);
-            var hardwareId = token.Id;
-
-            var hasher = HashAlgorithmProvider.OpenAlgorithm("MD5");
-            var hashed = hasher.HashData(hardwareId);
-
-            return CryptographicBuffer.EncodeToHexString(hashed);
-        }
-
-        public async Task<string> GetPushChannel()
-        {
-            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
-            return channel.Uri;
+            if (!string.IsNullOrWhiteSpace(_deviceId))
+                return _deviceId;
+            try
+            {
+                var token = HardwareIdentification.GetPackageSpecificToken(null);
+                _deviceId = token.Id.ToMd5Hash();
+            }
+            catch (Exception)
+            {
+                _deviceId = string.Empty;
+            }
+            return _deviceId;
         }
 
         private string GetAppVersion()
         {
-            string version;
+            if (!string.IsNullOrWhiteSpace(_appVersion))
+                return _appVersion;
             try
             {
-                var type = Application.Current.GetType().AssemblyQualifiedName;
-                version = type.Split(',')[2].Split('=')[1];
+                var package = Package.Current;
+                _appVersion = package.Id.Version.Major + "." + package.Id.Version.Minor + "." + package.Id.Version.Build + "." + package.Id.Version.Revision;
             }
             catch (Exception)
             {
-                version = "unknown";
+                _appVersion = string.Empty;
             }
-            return version;
+            return _appVersion;
         }
 
-        private void GetDeviceInfo()
+        private string GetDeviceName()
         {
+            if (!string.IsNullOrWhiteSpace(_deviceName))
+                return _deviceName;
             var info = new EasClientDeviceInformation();
-            DeviceName = info.SystemSku;
+            _deviceName = info.SystemSku;
+            return _deviceName;
         }
 
-        public string GetEmailBody()
+        public string GetEmailBody(string msisdn)
         {
             var builder = new StringBuilder();
+            builder.Append("User Primary SIM: ");
+            builder.Append(msisdn);
             builder.Append(Environment.NewLine);
             builder.Append("Device ID: ");
             builder.Append(GetDeviceId());
@@ -92,7 +92,8 @@ namespace Monizze.Common.Implementations
 #endif
             try
             {
-                return NetworkInformation.GetInternetConnectionProfile().GetConnectionCost().Roaming;
+                var profile = NetworkInformation.GetInternetConnectionProfile();
+                return profile != null && profile.GetConnectionCost().Roaming;
             }
             catch (Exception)
             {
@@ -102,16 +103,10 @@ namespace Monizze.Common.Implementations
 
         public bool IsConnected()
         {
-#if DEBUG
-            if (DeviceName.Equals("Microsoft Virtual"))
-                return true;
-#endif
             try
             {
                 var connection = NetworkInformation.GetInternetConnectionProfile();
-                if (connection == null)
-                    return false;
-                return connection.GetSignalBars() > 0;
+                return (connection != null);
             }
             catch (Exception)
             {
@@ -119,21 +114,11 @@ namespace Monizze.Common.Implementations
             }
         }
 
-        public bool HasInternet()
+        public bool IsMobileVikingsNetwork()
         {
-#if DEBUG
-            if (DeviceName.Equals("Microsoft Virtual"))
-                return true;
-
-#endif
-            try
-            {
-                return NetworkInformation.GetInternetConnectionProfile().GetSignalBars() > 0;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            var profiles = NetworkInformation.GetConnectionProfiles();
+            var mobileDataProfile = profiles.FirstOrDefault(x => x.IsWwanConnectionProfile && x.WwanConnectionProfileDetails.AccessPointName.Equals("web.be"));
+            return mobileDataProfile != null && !mobileDataProfile.GetConnectionCost().Roaming;
         }
     }
 }
