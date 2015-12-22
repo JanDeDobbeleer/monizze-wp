@@ -61,11 +61,9 @@ namespace Monizze.Common.Implementations
             return _deviceName;
         }
 
-        public string GetEmailBody(string msisdn)
+        public string GetEmailBody()
         {
             var builder = new StringBuilder();
-            builder.Append("User Primary SIM: ");
-            builder.Append(msisdn);
             builder.Append(Environment.NewLine);
             builder.Append("Device ID: ");
             builder.Append(GetDeviceId());

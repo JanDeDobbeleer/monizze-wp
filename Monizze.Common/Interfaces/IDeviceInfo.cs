@@ -5,7 +5,7 @@
         string AppVersion { get; }
         string Uuid { get; }
         string DeviceName { get; }
-        string GetEmailBody(string msisdn);
+        string GetEmailBody();
         bool IsRoaming();
         bool IsConnected();
         bool IsMobileVikingsNetwork();
