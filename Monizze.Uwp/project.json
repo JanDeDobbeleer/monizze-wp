@@ -1,8 +1,10 @@
 ﻿{
   "dependencies": {
+    "Fody": "1.29.4",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "Microsoft.Xaml.Behaviors.Uwp.Managed": "1.0.3",
     "MvvmLight": "5.2.0",
+    "PropertyChanged.Fody": "1.50.3",
     "Xamarin.Insights": "1.11.3"
   },
   "frameworks": {
