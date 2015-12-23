@@ -19,55 +19,10 @@ namespace Monizze.ViewModel
         public RelayCommand RefreshCommand { get; set; }
         public RelayCommand AccountCommand { get; set; }
 
-        private string _name = "...";
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (value == _name)
-                    return;
-                _name = value;
-                RaisePropertyChanged(() => Name);
-            }
-        }
-
-        private string _balance = "--.--";
-        public string Balance
-        {
-            get { return _balance; }
-            set
-            {
-                if (value == _balance)
-                    return;
-                _balance = value;
-                RaisePropertyChanged(() => Balance);
-            }
-        }
-
-        private List<Transaction> _transactions;
-        public List<Transaction> Transactions
-        {
-            get { return _transactions; }
-            set
-            {
-                if (value == _transactions)
-                    return;
-                _transactions = value;
-                RaisePropertyChanged(() => Transactions);
-            }
-        }
-
-        private bool _loading;
-        public bool Loading
-        {
-            get { return _loading; }
-            set
-            {
-                _loading = value;
-                RaisePropertyChanged(() => Loading);
-            }
-        }
+        public string Name { get; set; } = "...";
+        public string Balance { get; set; } = "--.--";
+        public List<Transaction> Transactions { get; set; }
+        public bool Loading { get; set; }
 
         public MainViewModel(IMonizzeClient client, INavigationService navigationService)
         {
