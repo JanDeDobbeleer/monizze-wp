@@ -21,10 +21,7 @@
     <Page.BottomAppBar>
         <CommandBar Background="White" Foreground="Black">
             <CommandBar.PrimaryCommands>
-                <AppBarButton Label="refresh" Command="{Binding RefreshCommand}">
-                    <AppBarButton.Icon>
-                        <BitmapIcon UriSource="/Assets/Icons/sync.png"/>
-                    </AppBarButton.Icon>
+                <AppBarButton Label="refresh" Command="{Binding RefreshCommand}" Icon="Sync" Foreground="Black">
                 </AppBarButton>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
@@ -63,7 +60,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Foreground="Black" Grid.Row="0" FontWeight="SemiBold" Grid.Column="0" TextWrapping="WrapWholeWords" FontSize="{StaticResource NormalFontSize}" Text="{Binding MerchantName}"/>
                             <TextBlock Foreground="DarkGray" Grid.Row="1" Grid.Column="0" Text="{Binding TimeStamp, Converter={StaticResource TimeStampConverter}}" FontSize="{StaticResource SmallFontSize}"/>
-                            <TextBlock Foreground="{Binding Amount, Converter={StaticResource AmountForegroundConverter}}" Margin="5,0,0,0" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource NormalFontSize}" Text="{Binding Amount}" VerticalAlignment="Bottom"/>
+                            <TextBlock Foreground="{Binding Amount, Converter={StaticResource AmountForegroundConverter}}" Margin="5,0,0,0" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" FontSize="{StaticResource NormalFontSize}" Text="{Binding Amount}" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
