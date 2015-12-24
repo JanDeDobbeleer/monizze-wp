@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Monizze.Api.Client;
 using Monizze.Interfaces;
@@ -10,7 +9,7 @@ using Monizze.View;
 
 namespace Monizze.ViewModel
 {
-    public class LoginViewModel: ViewModelBase, INavigable, IKeyboardAwareViewModel
+    public class LoginViewModel: SuperViewModelBase, INavigable, IKeyboardAwareViewModel
     {
         private readonly IMonizzeClient _client;
         private readonly INavigationService _navigationService;
@@ -18,51 +17,10 @@ namespace Monizze.ViewModel
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand ForgotCommand { get; set; }
 
-        private double _rectangleHeight;
-        public double RectangleHeight
-        {
-            get { return _rectangleHeight; }
-            set
-            {
-                if (value == _rectangleHeight)
-                    return;
-                _rectangleHeight = value;
-                RaisePropertyChanged(() => RectangleHeight);
-            }
-        }
-        
-        private string _username;
-        public string UserName
-        {
-            get { return _username; }
-            set
-            {
-                _username = value;
-                RaisePropertyChanged(() => UserName);
-            }
-        }
-
-        private string _password;
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                _password = value;
-                RaisePropertyChanged(() => Password);
-            }
-        }
-
-        private bool _loading;
-        public bool Loading
-        {
-            get { return _loading; }
-            set
-            {
-                _loading = value;
-                RaisePropertyChanged(() => Loading);
-            }
-        }
+        public double RectangleHeight { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public bool Loading { get; set; }
 
         public LoginViewModel(IMonizzeClient client, INavigationService navigationService)
         {

@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Email;
 using Windows.Storage;
 using Windows.Storage.Streams;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Monizze.Common.Interfaces;
 using Monizze.Interfaces;
@@ -11,7 +10,7 @@ using Monizze.View;
 
 namespace Monizze.ViewModel
 {
-    public class AccountViewModel: ViewModelBase, INavigable
+    public class AccountViewModel: SuperViewModelBase, INavigable
     {
         private readonly INavigationService _navigationService;
         private readonly ICredentialManager _credentialManager;
@@ -20,6 +19,8 @@ namespace Monizze.ViewModel
 
         public RelayCommand LogoutCommand { get; set; }
         public RelayCommand MailCommand { get; set; }
+        public RelayCommand PrivacyCommand { get; set; }
+        public string VersionNumber { get; set; }
 
         public AccountViewModel(INavigationService navigationService, ICredentialManager credentialManager, ILogger logger, IDeviceInfo deviceInfo)
         {
@@ -68,7 +69,10 @@ namespace Monizze.ViewModel
         #region Inavigable
         public async Task Activate()
         {
-            await Task.Factory.StartNew(() => { });
+            VersionNumber = _deviceInfo.AppVersion;
+            await Task.Factory.StartNew(() =>
+            {
+            });
         }
 
         public void Deactivate()

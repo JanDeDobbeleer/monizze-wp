@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Monizze.Api.Client;
 using Monizze.Api.Model;
@@ -11,7 +10,7 @@ using Monizze.View;
 
 namespace Monizze.ViewModel
 {
-    public class MainViewModel : ViewModelBase, INavigable
+    public class MainViewModel : SuperViewModelBase, INavigable
     {
         private readonly IMonizzeClient _client;
         private readonly INavigationService _navigationService;

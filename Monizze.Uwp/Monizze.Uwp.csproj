@@ -104,10 +104,12 @@
     <Compile Include="Interfaces\INavigationService.cs" />
     <Compile Include="Model\NavigationAwarePage.cs" />
     <Compile Include="Model\NavigationService.cs" />
+    <Compile Include="Model\PropertyChangedMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AccountViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SuperViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
