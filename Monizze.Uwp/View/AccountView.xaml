@@ -50,7 +50,7 @@
                 <TextBlock Text="{Binding VersionNumber}" Foreground="Black" Margin="0,10,0,0" FontSize="{StaticResource SmallFontSize}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Stretch">
-                <TextBlock Text="Send logs" Style="{StaticResource HeaderStyle}"/>
+                <TextBlock Text="Contact" Style="{StaticResource HeaderStyle}"/>
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Tapped">
                         <core:InvokeCommandAction Command="{Binding MailCommand}"/>

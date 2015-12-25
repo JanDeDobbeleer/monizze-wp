@@ -40,7 +40,7 @@ namespace Monizze.ViewModel
                     _logger.Debug(GetType() + " Preparing email with logs");
                     var sendTo = new EmailRecipient
                     {
-                        Address = "jan.de.dobbeleer@mobilevikings.com"
+                        Address = "monizze@outlook.be"
                     };
                     //generate mail object
                     var mail = new EmailMessage { Subject = "Crash report from the My Monizze Windows Phone app" };
@@ -62,6 +62,11 @@ namespace Monizze.ViewModel
                 {
                     _logger.Error(GetType() + " trouble sending email, ship is not sailing son", e);
                 }
+            });
+            PrivacyCommand = new RelayCommand(async () =>
+            {
+                var page = new Uri("http://jan-joris.be/privacy.html");
+                await Windows.System.Launcher.LaunchUriAsync(page);
             });
         }
 
