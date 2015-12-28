@@ -46,7 +46,7 @@
                     <TextBlock Foreground="White" FontSize="{StaticResource LargeFontSize}" Text="{Binding Balance}" HorizontalAlignment="Center" Margin="0"/>
                 </StackPanel>
             </Border>
-            <ListView Grid.Row="1" Background="Transparent" Margin="12,0,12,0" ItemContainerStyle="{StaticResource UnanimatedListViewItemStyle}" ItemsSource="{Binding Transactions}">
+            <ListView Grid.Row="1" Background="Transparent" Margin="12,0,12,0" ScrollViewer.VerticalScrollBarVisibility="Hidden" ItemContainerStyle="{StaticResource UnanimatedListViewItemStyle}" ItemsSource="{Binding Transactions}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="0,10,0,0">
