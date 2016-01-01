@@ -17,13 +17,33 @@ namespace Monizze.LiveTile
                 Visual = new TileVisual
                 {
                     Branding = TileBranding.Name,
+                    TileSmall = new TileBinding
+                    {
+                        Content = new TileBindingContentAdaptive
+                        {
+                            //BackgroundImage = new TileBackgroundImage
+                            //{
+                            //    Source = new TileImageSource("Assets/background.jpg")
+                            //},
+                            TextStacking = TileTextStacking.Center,
+                            Children =
+                            {
+                                new TileText
+                                {
+                                    Text = $"€{balance}",
+                                    Style = TileTextStyle.Caption,
+                                    Align = TileTextAlign.Center
+                                }
+                            }
+                        }
+                    },
                     TileMedium = new TileBinding
                     {
                         Content = new TileBindingContentAdaptive
                         {
                             //BackgroundImage = new TileBackgroundImage
                             //{
-                            //    Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg")
+                            //    Source = new TileImageSource("Assets/background.jpg")
                             //},
                             TextStacking = TileTextStacking.Center,
                             Children =
@@ -41,6 +61,10 @@ namespace Monizze.LiveTile
                     {
                         Content = new TileBindingContentAdaptive
                         {
+                            //BackgroundImage = new TileBackgroundImage
+                            //{
+                            //    Source = new TileImageSource("Assets/background.jpg")
+                            //},
                             TextStacking = TileTextStacking.Center,
                             Children =
                             {
