@@ -198,6 +198,10 @@
       <Project>{bca17931-7620-4ab3-b7d6-14775d9130ee}</Project>
       <Name>Monizze.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Monizze.LiveTile\Monizze.LiveTile.csproj">
+      <Project>{042100de-a606-4a7e-b9af-94a07dd8f814}</Project>
+      <Name>Monizze.LiveTile</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.10586.0">

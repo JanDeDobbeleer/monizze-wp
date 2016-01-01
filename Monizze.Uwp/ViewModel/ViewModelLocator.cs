@@ -19,6 +19,7 @@ using Monizze.Common.Implementations;
 using Monizze.Common.Interfaces;
 using Monizze.Common.Model;
 using Monizze.Interfaces;
+using Monizze.LiveTile;
 using Monizze.Model;
 
 namespace Monizze.ViewModel
@@ -51,6 +52,7 @@ namespace Monizze.ViewModel
             SimpleIoc.Default.Register<ICredentialManager, CredentialManager>();
             SimpleIoc.Default.Register<ILogger, Logger>();
             SimpleIoc.Default.Register<IDeviceInfo, DeviceInfo>();
+            SimpleIoc.Default.Register<ITileUpdater, TileUpdater>();
 #if MOCK
             SimpleIoc.Default.Register<IMonizzeClient, MockClient>();
 #else

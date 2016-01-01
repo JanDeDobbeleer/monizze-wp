@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monizze.Common", "Monizze.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monizze.Uwp", "Monizze.Uwp\Monizze.Uwp.csproj", "{D7ED18AD-472D-4B69-BA45-4235EAC544D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monizze.LiveTile", "Monizze.LiveTile\Monizze.LiveTile.csproj", "{042100DE-A606-4A7E-B9AF-94A07DD8F814}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,36 @@ Global
 		{D7ED18AD-472D-4B69-BA45-4235EAC544D9}.Release|x86.ActiveCfg = Release|x86
 		{D7ED18AD-472D-4B69-BA45-4235EAC544D9}.Release|x86.Build.0 = Release|x86
 		{D7ED18AD-472D-4B69-BA45-4235EAC544D9}.Release|x86.Deploy.0 = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|ARM.ActiveCfg = Debug|ARM
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|ARM.Build.0 = Debug|ARM
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|x64.ActiveCfg = Debug|x64
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|x64.Build.0 = Debug|x64
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|x86.ActiveCfg = Debug|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Debug|x86.Build.0 = Debug|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|Any CPU.ActiveCfg = Release|Any CPU
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|Any CPU.Build.0 = Release|Any CPU
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|ARM.ActiveCfg = Release|ARM
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|ARM.Build.0 = Release|ARM
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|Mixed Platforms.ActiveCfg = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|Mixed Platforms.Build.0 = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|x64.ActiveCfg = Release|x64
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|x64.Build.0 = Release|x64
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|x86.ActiveCfg = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Mock|x86.Build.0 = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|ARM.ActiveCfg = Release|ARM
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|ARM.Build.0 = Release|ARM
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|Mixed Platforms.Build.0 = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|x64.ActiveCfg = Release|x64
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|x64.Build.0 = Release|x64
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|x86.ActiveCfg = Release|x86
+		{042100DE-A606-4A7E-B9AF-94A07DD8F814}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

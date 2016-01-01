@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Background;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Practices.ServiceLocation;
 using Monizze.Common.Interfaces;
+using Monizze.LiveTile;
 using Monizze.View;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -39,7 +42,7 @@ namespace Monizze
         /// search results, and so forth.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (Debugger.IsAttached)
@@ -47,6 +50,7 @@ namespace Monizze
                 DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
+            await RegisterBackgroundTasks();
 
             var rootFrame = Window.Current.Content as Frame;
 
@@ -131,6 +135,46 @@ namespace Monizze
             var logger = ServiceLocator.Current.GetInstance<ILogger>();
             logger.Error("Exception occured on root level, app crashes", e.Exception);
             new ManualResetEvent(false).WaitOne(new TimeSpan(0, 0, 0, 2));
+        }
+
+        private async Task RegisterBackgroundTasks()
+        {
+            // Get rid of existing registrations.  
+            foreach (var task in BackgroundTaskRegistration.AllTasks)
+            {
+                try
+                {
+                    task.Value.Unregister(false);
+                }
+                catch // hack  
+                {
+                    ServiceLocator.Current.GetInstance<ILogger>().Info("Could not register background task");
+                }
+            }
+            // Call RemoveAccess
+            try
+            {
+                BackgroundExecutionManager.RemoveAccess();
+            }
+            catch //happens when a new one is initialized
+            {
+                ServiceLocator.Current.GetInstance<ILogger>().Info("Could not remove access");
+            }
+            var status = await BackgroundExecutionManager.RequestAccessAsync();
+            if (status.Equals(BackgroundAccessStatus.Denied))
+                return;
+            RegisterTask("Tile Task", typeof(BackgroundTask), new TimeTrigger(15, false));
+        }
+
+        private void RegisterTask(string name, Type bgType, IBackgroundTrigger trigger)
+        {
+            var builder = new BackgroundTaskBuilder
+            {
+                Name = name,
+                TaskEntryPoint = bgType.FullName
+            };
+            builder.SetTrigger(trigger);
+            builder.Register();
         }
     }
 }

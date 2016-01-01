@@ -3,15 +3,6 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -210,53 +201,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -1593,26 +1543,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -1854,53 +1787,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3284,26 +3176,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -3531,53 +3406,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -4947,26 +4781,9 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -5213,53 +5030,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -6643,26 +6419,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -6890,53 +6649,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8306,26 +8024,9 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -8572,53 +8273,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -10002,26 +9662,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
-      "CommonServiceLocator/1.3.0": {
-        "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
-        }
-      },
-      "Fody/1.29.4": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -10249,53 +9892,12 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-        "compile": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
-          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
-        }
-      },
-      "MvvmLight/5.2.0": {
-        "dependencies": {
-          "MvvmLightLibs": "[5.2.0, )"
-        }
-      },
-      "MvvmLightLibs/5.2.0": {
-        "dependencies": {
-          "CommonServiceLocator": "[1.3.0, )"
-        },
-        "compile": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/windows81/GalaSoft.MvvmLight.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
-          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
-        }
-      },
       "NotificationsExtensions.Win10/10586.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
         "runtime": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
-        }
-      },
-      "PropertyChanged.Fody/1.50.3": {
-        "dependencies": {
-          "Fody": "[1.29.2, )"
-        },
-        "compile": {
-          "Lib/dotnet/PropertyChanged.dll": {}
-        },
-        "runtime": {
-          "Lib/dotnet/PropertyChanged.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11665,56 +11267,10 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Xamarin.Insights/1.11.3": {
-        "compile": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        },
-        "runtime": {
-          "lib/windows8/Xamarin.Insights.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "CommonServiceLocator/1.3.0": {
-      "sha512": "fbjO0SNwbOFPdwVfyqv+B7gIJ2CVBOFPKqn1mDDECK7KER8jFaOdcvroFYoAHa0ktPbxi5s+15qOLnA96f8GSA==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "CommonServiceLocator.nuspec",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.pdb",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.XML",
-        "package/services/metadata/core-properties/8a82b9e5a63a439481bfa8d4ec335002.psmdcp",
-        "package/services/metadata/core-properties/99be0c88b2fd41c8b07c42071005ee47.psmdcp"
-      ]
-    },
-    "Fody/1.29.4": {
-      "sha512": "GVlhR6Ngy5/plww+7WFMyWCjS/rFl3Nzev/DuAW7CXhfmMDmNEX+TQMmUQ7yflohNHT6u2RVCQhv2mMoJm81kg==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "build/dotnet/Fody.targets",
-        "build/portable-net+sl+win+wpa+wp/Fody.targets",
-        "Content/FodyWeavers.xml",
-        "Fody.dll",
-        "Fody.nuspec",
-        "Fody.pdb",
-        "FodyCommon.dll",
-        "FodyCommon.pdb",
-        "FodyIsolated.dll",
-        "FodyIsolated.pdb",
-        "Mono.Cecil.dll",
-        "Mono.Cecil.Mdb.dll",
-        "Mono.Cecil.Pdb.dll",
-        "Mono.Cecil.Rocks.dll",
-        "package/services/metadata/core-properties/5d620024e2ee4c1e86baaffdeb76e630.psmdcp"
-      ]
-    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "Package",
@@ -12368,173 +11924,6 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "Microsoft.Xaml.Behaviors.Uwp.Managed/1.0.3": {
-      "sha512": "N/HJa+ld/kKIKQaTTBY/ytLukfujKkBMww59p9qmPkEpyHZRMYB8FNalghu1rFMCXoSx9cWD8U4nt/r7qLQmVg==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "lib/uap10.0/Design/Microsoft.Xaml.Interactions.Design.dll",
-        "lib/uap10.0/Design/Microsoft.Xaml.Interactivity.Design.dll",
-        "lib/uap10.0/Microsoft.Xaml.Interactions.dll",
-        "lib/uap10.0/Microsoft.Xaml.Interactions.pri",
-        "lib/uap10.0/Microsoft.Xaml.Interactions.xml",
-        "lib/uap10.0/Microsoft.Xaml.Interactions/Properties/Microsoft.Xaml.Interactions.rd.xml",
-        "lib/uap10.0/Microsoft.Xaml.Interactivity.dll",
-        "lib/uap10.0/Microsoft.Xaml.Interactivity.pri",
-        "lib/uap10.0/Microsoft.Xaml.Interactivity.xml",
-        "lib/uap10.0/Microsoft.Xaml.Interactivity/Properties/Microsoft.Xaml.Interactivity.rd.xml",
-        "Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec",
-        "package/services/metadata/core-properties/3c85324cf8b64508a39f4ccba86cb561.psmdcp"
-      ]
-    },
-    "MvvmLight/5.2.0": {
-      "sha512": "MZbIMIFEjPMWx8hFnlcbMbwjyrCboXqmVKHZ265XYKK4/XtYfEVVJ3ptqmD5LRQOOhl4P+RzXXTr8Exzarr5TQ==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "Content/ViewModel/MainViewModel.cs.pp",
-        "Content/ViewModel/ViewModelLocator.cs.pp",
-        "MvvmLight.nuspec",
-        "package/services/metadata/core-properties/0b54fc98b3a242ceb6bc624649949a8a.psmdcp",
-        "tools/install.ps1"
-      ]
-    },
-    "MvvmLightLibs/5.2.0": {
-      "sha512": "F16xSNXK0nE5os3lrY+G2NkFdAXPJV7Ux8A9WUxZlyLZShUdCkoe14tov9KxGmgfCuQA/IKM/NWEyN0Dac1Mog==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "lib/monoandroid1/GalaSoft.MvvmLight.dll",
-        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.dll",
-        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.XML",
-        "lib/monoandroid1/GalaSoft.MvvmLight.pdb",
-        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.dll",
-        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.XML",
-        "lib/monoandroid1/GalaSoft.MvvmLight.XML",
-        "lib/net35/GalaSoft.MvvmLight.dll",
-        "lib/net35/GalaSoft.MvvmLight.Extras.dll",
-        "lib/net35/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/net35/GalaSoft.MvvmLight.Extras.xml",
-        "lib/net35/GalaSoft.MvvmLight.pdb",
-        "lib/net35/GalaSoft.MvvmLight.xml",
-        "lib/net35/System.Windows.Interactivity.dll",
-        "lib/net35/System.Windows.Interactivity.xml",
-        "lib/net40/GalaSoft.MvvmLight.dll",
-        "lib/net40/GalaSoft.MvvmLight.Extras.dll",
-        "lib/net40/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/net40/GalaSoft.MvvmLight.Extras.xml",
-        "lib/net40/GalaSoft.MvvmLight.pdb",
-        "lib/net40/GalaSoft.MvvmLight.xml",
-        "lib/net40/System.Windows.Interactivity.dll",
-        "lib/net40/System.Windows.Interactivity.xml",
-        "lib/net45/GalaSoft.MvvmLight.dll",
-        "lib/net45/GalaSoft.MvvmLight.Extras.dll",
-        "lib/net45/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/net45/GalaSoft.MvvmLight.Extras.xml",
-        "lib/net45/GalaSoft.MvvmLight.pdb",
-        "lib/net45/GalaSoft.MvvmLight.Platform.dll",
-        "lib/net45/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/net45/GalaSoft.MvvmLight.Platform.xml",
-        "lib/net45/GalaSoft.MvvmLight.xml",
-        "lib/net45/System.Windows.Interactivity.dll",
-        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.dll",
-        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
-        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
-        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.pdb",
-        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.XML",
-        "lib/SL4/GalaSoft.MvvmLight.dll",
-        "lib/SL4/GalaSoft.MvvmLight.Extras.dll",
-        "lib/SL4/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/SL4/GalaSoft.MvvmLight.Extras.xml",
-        "lib/SL4/GalaSoft.MvvmLight.pdb",
-        "lib/SL4/GalaSoft.MvvmLight.xml",
-        "lib/SL4/System.Windows.Interactivity.dll",
-        "lib/SL4/System.Windows.Interactivity.xml",
-        "lib/sl4-wp71/GalaSoft.MvvmLight.dll",
-        "lib/sl4-wp71/GalaSoft.MvvmLight.Extras.dll",
-        "lib/sl4-wp71/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/sl4-wp71/GalaSoft.MvvmLight.Extras.xml",
-        "lib/sl4-wp71/GalaSoft.MvvmLight.pdb",
-        "lib/sl4-wp71/GalaSoft.MvvmLight.xml",
-        "lib/sl4-wp71/Microsoft.Practices.ServiceLocation.dll",
-        "lib/sl4-wp71/Microsoft.Practices.ServiceLocation.xml",
-        "lib/sl4-wp71/System.Windows.Interactivity.dll",
-        "lib/sl4-wp71/System.Windows.Interactivity.xml",
-        "lib/SL5/GalaSoft.MvvmLight.dll",
-        "lib/SL5/GalaSoft.MvvmLight.Extras.dll",
-        "lib/SL5/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/SL5/GalaSoft.MvvmLight.Extras.xml",
-        "lib/SL5/GalaSoft.MvvmLight.pdb",
-        "lib/SL5/GalaSoft.MvvmLight.xml",
-        "lib/SL5/System.Windows.Interactivity.dll",
-        "lib/windows8/GalaSoft.MvvmLight.dll",
-        "lib/windows8/GalaSoft.MvvmLight.Extras.dll",
-        "lib/windows8/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/windows8/GalaSoft.MvvmLight.Extras.xml",
-        "lib/windows8/GalaSoft.MvvmLight.pdb",
-        "lib/windows8/GalaSoft.MvvmLight.Platform.dll",
-        "lib/windows8/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/windows8/GalaSoft.MvvmLight.Platform.pri",
-        "lib/windows8/GalaSoft.MvvmLight.Platform.xml",
-        "lib/windows8/GalaSoft.MvvmLight.xml",
-        "lib/windows81/GalaSoft.MvvmLight.dll",
-        "lib/windows81/GalaSoft.MvvmLight.Extras.dll",
-        "lib/windows81/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/windows81/GalaSoft.MvvmLight.Extras.xml",
-        "lib/windows81/GalaSoft.MvvmLight.pdb",
-        "lib/windows81/GalaSoft.MvvmLight.Platform.dll",
-        "lib/windows81/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/windows81/GalaSoft.MvvmLight.Platform.pri",
-        "lib/windows81/GalaSoft.MvvmLight.Platform.xml",
-        "lib/windows81/GalaSoft.MvvmLight.xml",
-        "lib/wp8/GalaSoft.MvvmLight.dll",
-        "lib/wp8/GalaSoft.MvvmLight.Extras.dll",
-        "lib/wp8/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/wp8/GalaSoft.MvvmLight.Extras.xml",
-        "lib/wp8/GalaSoft.MvvmLight.pdb",
-        "lib/wp8/GalaSoft.MvvmLight.Platform.dll",
-        "lib/wp8/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/wp8/GalaSoft.MvvmLight.Platform.xml",
-        "lib/wp8/GalaSoft.MvvmLight.xml",
-        "lib/wp8/System.Windows.Interactivity.dll",
-        "lib/wp81/GalaSoft.MvvmLight.dll",
-        "lib/wp81/GalaSoft.MvvmLight.Extras.dll",
-        "lib/wp81/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/wp81/GalaSoft.MvvmLight.Extras.xml",
-        "lib/wp81/GalaSoft.MvvmLight.pdb",
-        "lib/wp81/GalaSoft.MvvmLight.Platform.dll",
-        "lib/wp81/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/wp81/GalaSoft.MvvmLight.Platform.xml",
-        "lib/wp81/GalaSoft.MvvmLight.xml",
-        "lib/wp81/System.Windows.Interactivity.dll",
-        "lib/wpa81/GalaSoft.MvvmLight.dll",
-        "lib/wpa81/GalaSoft.MvvmLight.Extras.dll",
-        "lib/wpa81/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/wpa81/GalaSoft.MvvmLight.Extras.XML",
-        "lib/wpa81/GalaSoft.MvvmLight.pdb",
-        "lib/wpa81/GalaSoft.MvvmLight.Platform.dll",
-        "lib/wpa81/GalaSoft.MvvmLight.Platform.pdb",
-        "lib/wpa81/GalaSoft.MvvmLight.Platform.pri",
-        "lib/wpa81/GalaSoft.MvvmLight.Platform.XML",
-        "lib/wpa81/GalaSoft.MvvmLight.XML",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.dll",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.pdb",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.dll",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.XML",
-        "lib/xamarin.ios10/GalaSoft.MvvmLight.XML",
-        "MvvmLightLibs.nuspec",
-        "package/services/metadata/core-properties/2416d2969a834c638aba3851d652cc13.psmdcp"
-      ]
-    },
     "NotificationsExtensions.Win10/10586.0.0": {
       "sha512": "MISR3bytM8ZHZtaJbWUU4GxHbnQKqUfjohg5uSAflFUqztKbvhDmKN1fTJYs/oYovhBFrU4P3CoiWfRnT7FTWw==",
       "type": "Package",
@@ -12554,25 +11943,6 @@
         "lib/uap10.0/NotificationsExtensions.xml",
         "NotificationsExtensions.Win10.nuspec",
         "package/services/metadata/core-properties/5d5cbb4e5ec6464fa0b3cee3b82d40de.psmdcp"
-      ]
-    },
-    "PropertyChanged.Fody/1.50.3": {
-      "sha512": "dCIe+QnL441VTM+cfTvWklSBAeq0/x+89nYR76eIBnMXIE8UNmneJqYBUDek2PIe6vCRK+577N/SwHzv38fEIQ==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "build/dotnet/PropertyChanged.Fody.targets",
-        "Lib/dotnet/PropertyChanged.dll",
-        "Lib/dotnet/PropertyChanged.xml",
-        "Lib/portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40/PropertyChanged.dll",
-        "Lib/portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40/PropertyChanged.xml",
-        "package/services/metadata/core-properties/8a299e6c05834600967b4f7b970c2d14.psmdcp",
-        "PropertyChanged.Fody.dll",
-        "PropertyChanged.Fody.nuspec",
-        "PropertyChanged.Fody.pdb",
-        "Tools/install.ps1",
-        "Tools/uninstall.ps1"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -15269,64 +14639,12 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll",
         "System.Xml.XmlSerializer.nuspec"
       ]
-    },
-    "Xamarin.Insights/1.11.3": {
-      "sha512": "ewZ3dXcGONrMmPI22grN91ndL/UtuuQnKllMTFlgz+9WRK2q4i7ELegzV/qJtQ2cESKPgZ7qOE5CfRSlF9rtog==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "build/MonoAndroid10/Xamarin.Insights.Build.Task.dll",
-        "build/MonoAndroid10/Xamarin.Insights.targets",
-        "build/MonoTouch10/Xamarin.Insights.Build.Task.dll",
-        "build/MonoTouch10/Xamarin.Insights.targets",
-        "build/portable-win+net40/Xamarin.Insights.Build.Task.dll",
-        "build/portable-win+net40/Xamarin.Insights.targets",
-        "build/portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10/Xamarin.Insights.Build.Task.dll",
-        "build/portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10/Xamarin.Insights.targets",
-        "build/windows8/Xamarin.Insights.Build.Task.dll",
-        "build/windows8/Xamarin.Insights.targets",
-        "build/WP80/Xamarin.Insights.Build.Task.dll",
-        "build/WP80/Xamarin.Insights.targets",
-        "build/wpa/Xamarin.Insights.Build.Task.dll",
-        "build/wpa/Xamarin.Insights.targets",
-        "build/Xamarin.iOS10/Xamarin.Insights.Build.Task.dll",
-        "build/Xamarin.iOS10/Xamarin.Insights.targets",
-        "build/Xamarin.Mac20/Xamarin.Insights.Build.Task.dll",
-        "build/Xamarin.Mac20/Xamarin.Insights.targets",
-        "lib/MonoAndroid10/Xamarin.Insights.dll",
-        "lib/MonoAndroid10/Xamarin.Insights.XML",
-        "lib/MonoTouch10/PLCrashReporter.dll",
-        "lib/MonoTouch10/Xamarin.Insights.dll",
-        "lib/MonoTouch10/Xamarin.Insights.XML",
-        "lib/net40/Xamarin.Insights.dll",
-        "lib/net40/Xamarin.Insights.XML",
-        "lib/portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10/Xamarin.Insights.dll",
-        "lib/portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10/Xamarin.Insights.XML",
-        "lib/windows8/Xamarin.Insights.dll",
-        "lib/windows8/Xamarin.Insights.XML",
-        "lib/WP80/Xamarin.Insights.dll",
-        "lib/WP80/Xamarin.Insights.XML",
-        "lib/wpa/Xamarin.Insights.dll",
-        "lib/wpa/Xamarin.Insights.XML",
-        "lib/Xamarin.iOS10/PLCrashReporterUnifiedBinding.dll",
-        "lib/Xamarin.iOS10/Xamarin.Insights.dll",
-        "lib/Xamarin.iOS10/Xamarin.Insights.XML",
-        "lib/Xamarin.Mac20/Xamarin.Insights.dll",
-        "lib/Xamarin.Mac20/Xamarin.Insights.XML",
-        "package/services/metadata/core-properties/227e4d45b85c4456ab9e04ca94981ecd.psmdcp",
-        "Xamarin.Insights.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Fody >= 1.29.4",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
-      "Microsoft.Xaml.Behaviors.Uwp.Managed >= 1.0.3",
-      "MvvmLight >= 5.2.0",
-      "PropertyChanged.Fody >= 1.50.3",
-      "Xamarin.Insights >= 1.11.3"
+      "NotificationsExtensions.Win10 >= 10586.0.0"
     ],
     "UAP,Version=v10.0": []
   }

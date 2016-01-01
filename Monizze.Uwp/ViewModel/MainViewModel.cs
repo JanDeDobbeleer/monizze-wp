@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight.Command;
 using Monizze.Api.Client;
 using Monizze.Api.Model;
 using Monizze.Interfaces;
+using Monizze.LiveTile;
 using Monizze.View;
 
 namespace Monizze.ViewModel
@@ -14,6 +15,7 @@ namespace Monizze.ViewModel
     {
         private readonly IMonizzeClient _client;
         private readonly INavigationService _navigationService;
+        private readonly ITileUpdater _tileUpdater;
 
         public RelayCommand RefreshCommand { get; set; }
         public RelayCommand AccountCommand { get; set; }
@@ -23,10 +25,11 @@ namespace Monizze.ViewModel
         public List<Transaction> Transactions { get; set; }
         public bool Loading { get; set; }
 
-        public MainViewModel(IMonizzeClient client, INavigationService navigationService)
+        public MainViewModel(IMonizzeClient client, INavigationService navigationService, ITileUpdater tileUpdater)
         {
             _client = client;
             _navigationService = navigationService;
+            _tileUpdater = tileUpdater;
             RefreshCommand = new RelayCommand(async () =>
             {
                 if(Loading)
@@ -52,6 +55,7 @@ namespace Monizze.ViewModel
             {
                 Name = account.FirstName + " " + account.LastName;
                 Balance = "€" + account.Balance;
+                _tileUpdater.UpdateTile(account.Balance);
             }
             var temp = await _client.GetTransactions();
             Loading = false;
