@@ -1,4 +1,5 @@
-﻿using Windows.UI.Notifications;
+﻿using System;
+using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles;
 
 namespace Monizze.LiveTile
@@ -16,18 +17,24 @@ namespace Monizze.LiveTile
             {
                 Visual = new TileVisual
                 {
-                    Branding = TileBranding.Name,
                     TileSmall = new TileBinding
                     {
+                        Branding = TileBranding.None,
                         Content = new TileBindingContentAdaptive
                         {
-                            //BackgroundImage = new TileBackgroundImage
-                            //{
-                            //    Source = new TileImageSource("Assets/background.jpg")
-                            //},
+                            BackgroundImage = new TileBackgroundImage
+                            {
+                                Source = new TileImageSource("Assets/background.jpg")
+                            },
                             TextStacking = TileTextStacking.Center,
                             Children =
                             {
+                                new TileText
+                                {
+                                    Text = "Balance",
+                                    Style = TileTextStyle.Caption,
+                                    Align = TileTextAlign.Center
+                                },
                                 new TileText
                                 {
                                     Text = $"€{balance}",
@@ -39,39 +46,55 @@ namespace Monizze.LiveTile
                     },
                     TileMedium = new TileBinding
                     {
+                        Branding = TileBranding.Name,
+                        DisplayName = DateTime.Now.ToString("HH:mm dd/MM"),
                         Content = new TileBindingContentAdaptive
                         {
-                            //BackgroundImage = new TileBackgroundImage
-                            //{
-                            //    Source = new TileImageSource("Assets/background.jpg")
-                            //},
-                            TextStacking = TileTextStacking.Center,
+                            BackgroundImage = new TileBackgroundImage
+                            {
+                                Source = new TileImageSource("Assets/background.jpg")
+                            },
+                            TextStacking = TileTextStacking.Top,
                             Children =
                             {
                                 new TileText
                                 {
+                                    Text = "Balance",
+                                    Style = TileTextStyle.Body,
+                                    Align = TileTextAlign.Left
+                                },
+                                new TileText
+                                {
                                     Text = $"€{balance}",
-                                    Style = TileTextStyle.Title,
-                                    Align = TileTextAlign.Center
+                                    Style = TileTextStyle.Caption,
+                                    Align = TileTextAlign.Left
                                 }
                             }
                         }
                     },
                     TileWide = new TileBinding
                     {
+                        Branding = TileBranding.Name,
+                        DisplayName = $"updated {DateTime.Now.ToString("HH:mm dd/MM")}",
                         Content = new TileBindingContentAdaptive
                         {
-                            //BackgroundImage = new TileBackgroundImage
-                            //{
-                            //    Source = new TileImageSource("Assets/background.jpg")
-                            //},
+                            BackgroundImage = new TileBackgroundImage
+                            {
+                                Source = new TileImageSource("Assets/background.jpg")
+                            },
                             TextStacking = TileTextStacking.Center,
                             Children =
                             {
                                 new TileText
                                 {
+                                    Text = "Balance",
+                                    Style = TileTextStyle.Subtitle,
+                                    Align = TileTextAlign.Center
+                                },
+                                new TileText
+                                {
                                     Text = $"€{balance}",
-                                    Style = TileTextStyle.Header,
+                                    Style = TileTextStyle.Base,
                                     Align = TileTextAlign.Center
                                 }
                             }
