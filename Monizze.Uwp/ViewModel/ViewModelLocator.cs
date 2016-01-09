@@ -17,10 +17,10 @@ using Microsoft.Practices.ServiceLocation;
 using Monizze.Api.Client;
 using Monizze.Common.Implementations;
 using Monizze.Common.Interfaces;
-using Monizze.Common.Model;
 using Monizze.Interfaces;
 using Monizze.LiveTile;
 using Monizze.Model;
+using NotificationManager = Monizze.Managers.NotificationManager;
 
 namespace Monizze.ViewModel
 {

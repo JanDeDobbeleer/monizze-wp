@@ -134,7 +134,6 @@
     <Compile Include="Implementations\DeviceInfo.cs" />
     <Compile Include="Implementations\Encryptor.cs" />
     <Compile Include="Implementations\Logger.cs" />
-    <Compile Include="Implementations\NotificationManager.cs" />
     <Compile Include="Interfaces\ICredentialManager.cs" />
     <Compile Include="Interfaces\IDeviceInfo.cs" />
     <Compile Include="Interfaces\IEncryptor.cs" />

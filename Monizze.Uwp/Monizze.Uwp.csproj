@@ -102,6 +102,7 @@
     <Compile Include="Interfaces\IKeyboardAwareViewModel.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
     <Compile Include="Interfaces\INavigationService.cs" />
+    <Compile Include="Managers\NotificationManager.cs" />
     <Compile Include="Model\NavigationAwarePage.cs" />
     <Compile Include="Model\NavigationService.cs" />
     <Compile Include="Model\PropertyChangedMessage.cs" />

@@ -4,6 +4,7 @@ using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using GalaSoft.MvvmLight.Command;
 using Monizze.Api.Client;
+using Monizze.Common.Interfaces;
 using Monizze.Interfaces;
 using Monizze.View;
 
@@ -13,6 +14,7 @@ namespace Monizze.ViewModel
     {
         private readonly IMonizzeClient _client;
         private readonly INavigationService _navigationService;
+        private readonly INotificationManager _notificationManager;
 
         public RelayCommand LoginCommand { get; set; }
         public RelayCommand ForgotCommand { get; set; }
@@ -22,10 +24,11 @@ namespace Monizze.ViewModel
         public string Password { get; set; }
         public bool Loading { get; set; }
 
-        public LoginViewModel(IMonizzeClient client, INavigationService navigationService)
+        public LoginViewModel(IMonizzeClient client, INavigationService navigationService, INotificationManager notificationManager)
         {
             _client = client;
             _navigationService = navigationService;
+            _notificationManager = notificationManager;
             LoginCommand = new RelayCommand(async () =>
             {
                 //Verify if you filled in the necessary credentials
@@ -54,9 +57,13 @@ namespace Monizze.ViewModel
             });
             ForgotCommand = new RelayCommand(async () =>
             {
-                var response = await _client.ResetPassword("0470598580");
-                var dialog = new MessageDialog("Check back soon :-)");
-                await dialog.ShowAsync();
+                var requestResult = await _notificationManager.ShowInteractionBox("Password reset", "Please enter your account's email or cellphone number", UserName, "number", "Reset", "Cancel");
+                if (!requestResult.Item1)
+                    return;
+                var response = await _client.ResetPassword(requestResult.Item2);
+                if (response)
+                    return;
+                //TODO: add a notification to indicate success or not
             });
         }
 
