@@ -45,7 +45,7 @@
             <HyperlinkButton HorizontalAlignment="Center" Command="{Binding ForgotCommand}">
                 <TextBlock  FontSize="15" Foreground="White">
                         <Underline>
-                            <Run Text="Forgot password?"/>
+                            <Run Text="Reset password"/>
                         </Underline>
                 </TextBlock>
             </HyperlinkButton>
