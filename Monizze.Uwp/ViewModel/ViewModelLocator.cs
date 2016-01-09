@@ -49,6 +49,7 @@ namespace Monizze.ViewModel
             ////}
 
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            SimpleIoc.Default.Register<IEncryptor, Encryptor>();
             SimpleIoc.Default.Register<ICredentialManager, CredentialManager>();
             SimpleIoc.Default.Register<INotificationManager, NotificationManager>();
             SimpleIoc.Default.Register<ILogger, Logger>();

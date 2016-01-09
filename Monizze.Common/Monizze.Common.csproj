@@ -129,12 +129,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Implementations\CredentialManager.cs" />
+    <Compile Include="Implementations\CredentialManagerCache.cs" />
     <Compile Include="Implementations\DeviceInfo.cs" />
+    <Compile Include="Implementations\Encryptor.cs" />
     <Compile Include="Implementations\Logger.cs" />
+    <Compile Include="Implementations\NotificationManager.cs" />
     <Compile Include="Interfaces\ICredentialManager.cs" />
     <Compile Include="Interfaces\IDeviceInfo.cs" />
+    <Compile Include="Interfaces\IEncryptor.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
-    <Compile Include="Model\CredentialManager.cs" />
     <Compile Include="Interfaces\INotificationManager.cs" />
     <Compile Include="Model\LogSource.cs" />
     <Compile Include="Model\StorageFileEventListener.cs" />

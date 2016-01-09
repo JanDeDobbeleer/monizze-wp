@@ -40,7 +40,7 @@ namespace Monizze.Api.Client
         {
             try
             {
-                using (var client = GetHttpClient())
+                using (var client = await GetHttpClient())
                 {
                     var parameterlist = new List<Parameter>
                     {
@@ -52,7 +52,7 @@ namespace Monizze.Api.Client
                         return false;
                     var reponseString = await response.Content.ReadAsStringAsync();
                     var tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(reponseString);
-                    _credentialManager.SaveToken(tokenResponse.Token);
+                    await _credentialManager.SaveToken(tokenResponse.Token);
                     return true;
                 }
             }
@@ -67,7 +67,7 @@ namespace Monizze.Api.Client
         {
             try
             {
-                using (var client = GetHttpClient())
+                using (var client = await GetHttpClient())
                 {
                     var response = await client.GetAsync("/en/api/json/account");
                     if (!response.IsSuccessStatusCode)
@@ -88,7 +88,7 @@ namespace Monizze.Api.Client
         {
             try
             {
-                using (var client = GetHttpClient())
+                using (var client = await GetHttpClient())
                 {
                     var parameters = new List<Parameter>
                     {
@@ -129,7 +129,7 @@ namespace Monizze.Api.Client
             return sb.ToString();
         }
 
-        private HttpClient GetHttpClient()
+        private async Task<HttpClient> GetHttpClient()
         {
             var client = new HttpClient {BaseAddress = new Uri("https://www.monizze.be")};
             var xtime = DateTime.Now.Ticks / 1000;
@@ -137,8 +137,8 @@ namespace Monizze.Api.Client
             client.DefaultRequestHeaders.Add("X-Time", xtime.ToString());
             client.DefaultRequestHeaders.Add("x-Application", "map");
             client.DefaultRequestHeaders.Add("X-MONIZZE-APP-Token", GetToken(xtime.ToString()));
-            if(_credentialManager.IsLoggedIn())
-                client.DefaultRequestHeaders.Add("X-MONIZZE-LOGIN-Token", _credentialManager.GetToken());
+            if(await _credentialManager.IsLoggedIn())
+                client.DefaultRequestHeaders.Add("X-MONIZZE-LOGIN-Token", await _credentialManager.GetToken());
             return client;
         }
 

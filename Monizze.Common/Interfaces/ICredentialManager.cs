@@ -1,10 +1,12 @@
-﻿namespace Monizze.Common.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace Monizze.Common.Interfaces
 {
     public interface ICredentialManager
     {
-        bool IsLoggedIn();
-        string GetToken();
-        void SaveToken(string token);
-        void Logout();
+        Task<bool> IsLoggedIn();
+        Task<string> GetToken();
+        Task SaveToken(string token);
+        Task Logout();
     }
 }

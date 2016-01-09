@@ -1,7 +1,6 @@
 ﻿using Windows.ApplicationModel.Background;
 using Monizze.Api.Client;
 using Monizze.Common.Implementations;
-using Monizze.Common.Model;
 
 namespace Monizze.LiveTile
 {
@@ -13,7 +12,7 @@ namespace Monizze.LiveTile
             if (!info.IsConnected())
                 return;
             var deferral = taskInstance.GetDeferral();
-            var api = new MonizzeClient(new Logger(), new CredentialManager());
+            var api = new MonizzeClient(new Logger(), new CredentialManager(new Encryptor()));
             var response = await api.GetAccount();
             if (string.IsNullOrWhiteSpace(response.Balance))
                 return;

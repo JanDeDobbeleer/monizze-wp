@@ -16,6 +16,7 @@ namespace Monizze.ViewModel
         private readonly ICredentialManager _credentialManager;
         private readonly ILogger _logger;
         private readonly IDeviceInfo _deviceInfo;
+        private readonly INotificationManager _notificationManager;
 
         public RelayCommand LogoutCommand { get; set; }
         public RelayCommand MailCommand { get; set; }

@@ -23,7 +23,7 @@ namespace Monizze
     /// </summary>
     public sealed partial class App : Application
     {
-        private TransitionCollection transitions;
+        private TransitionCollection _transitions;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -77,10 +77,10 @@ namespace Monizze
                 // Removes the turnstile navigation for startup.
                 if (rootFrame.ContentTransitions != null)
                 {
-                    transitions = new TransitionCollection();
+                    _transitions = new TransitionCollection();
                     foreach (var c in rootFrame.ContentTransitions)
                     {
-                        transitions.Add(c);
+                        _transitions.Add(c);
                     }
                 }
 
@@ -90,7 +90,7 @@ namespace Monizze
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                var initial = (ServiceLocator.Current.GetInstance<ICredentialManager>().IsLoggedIn())
+                var initial = (await ServiceLocator.Current.GetInstance<ICredentialManager>().IsLoggedIn())
                     ? typeof (MainView)
                     : typeof (LoginView);
                 if (!rootFrame.Navigate(initial, e.Arguments))
@@ -104,14 +104,16 @@ namespace Monizze
         }
 
         /// <summary>
-        /// Restores the content transitions after the app has launched.
+        /// Restores the content _transitions after the app has launched.
         /// </summary>
         /// <param name="sender">The object where the handler is attached.</param>
         /// <param name="e">Details about the navigation event.</param>
         private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
         {
             var rootFrame = sender as Frame;
-            rootFrame.ContentTransitions = transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
+            if (rootFrame == null)
+                return;
+            rootFrame.ContentTransitions = _transitions ?? new TransitionCollection { new NavigationThemeTransition() };
             rootFrame.Navigated -= RootFrame_FirstNavigated;
         }
 

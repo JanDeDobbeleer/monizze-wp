@@ -39,7 +39,7 @@ namespace Monizze
         /// search results, and so forth.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (Debugger.IsAttached)
@@ -86,7 +86,7 @@ namespace Monizze
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                var initial = (ServiceLocator.Current.GetInstance<ICredentialManager>().IsLoggedIn())
+                var initial = (await ServiceLocator.Current.GetInstance<ICredentialManager>().IsLoggedIn())
                     ? typeof (MainView)
                     : typeof (LoginView);
                 if (!rootFrame.Navigate(initial, e.Arguments))
