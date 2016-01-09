@@ -124,9 +124,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
@@ -138,6 +135,7 @@
     <Compile Include="Interfaces\IDeviceInfo.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Model\CredentialManager.cs" />
+    <Compile Include="Interfaces\INotificationManager.cs" />
     <Compile Include="Model\LogSource.cs" />
     <Compile Include="Model\StorageFileEventListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -22,15 +22,19 @@ namespace Monizze.ViewModel
         public RelayCommand PrivacyCommand { get; set; }
         public string VersionNumber { get; set; }
 
-        public AccountViewModel(INavigationService navigationService, ICredentialManager credentialManager, ILogger logger, IDeviceInfo deviceInfo)
+        public AccountViewModel(INavigationService navigationService, ICredentialManager credentialManager, ILogger logger, IDeviceInfo deviceInfo, INotificationManager notificationManager)
         {
             _navigationService = navigationService;
             _credentialManager = credentialManager;
             _logger = logger;
             _deviceInfo = deviceInfo;
-            LogoutCommand = new RelayCommand(() =>
+            _notificationManager = notificationManager;
+            LogoutCommand = new RelayCommand(async () =>
             {
-                _credentialManager.Logout();
+                var confirmed  = await _notificationManager.ShowMessageBox("Are you sure you want to log out?", "Yes", "No");
+                if (!confirmed)
+                    return;
+                await _credentialManager.Logout();
                 _navigationService.NavigateTo(typeof(LoginView));
             });
             MailCommand = new RelayCommand(async () =>

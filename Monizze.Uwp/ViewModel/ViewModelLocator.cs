@@ -50,6 +50,7 @@ namespace Monizze.ViewModel
 
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
             SimpleIoc.Default.Register<ICredentialManager, CredentialManager>();
+            SimpleIoc.Default.Register<INotificationManager, NotificationManager>();
             SimpleIoc.Default.Register<ILogger, Logger>();
             SimpleIoc.Default.Register<IDeviceInfo, DeviceInfo>();
             SimpleIoc.Default.Register<ITileUpdater, TileUpdater>();
