@@ -16,6 +16,7 @@ namespace Monizze.Api.Client
     public interface IMonizzeClient
     {
         Task<bool> Login(string email, string password);
+        Task<bool> ResetPassword(string userIdentifier);
         Task<Account> GetAccount();
         Task<List<Transaction>> GetTransactions(string transactionId = "0");
     }
@@ -59,6 +60,32 @@ namespace Monizze.Api.Client
             catch (Exception e)
             {
                 Logger.Error(GetType()+ " Issue logging in", e);
+                return false;
+            }
+        }
+        
+        /// <summary>
+        /// Resets the current password and sends an SMS to the user
+        /// </summary>
+        /// <param name="userIdentifier">email adress or cellphone number of the user</param>
+        /// <returns></returns>
+        public async Task<bool> ResetPassword(string userIdentifier)
+        {
+            try
+            {
+                using (var client = await GetHttpClient())
+                {
+                    var parameterlist = new List<Parameter>
+                    {
+                        new Parameter { Name = "login", Value = userIdentifier}
+                    };
+                    var response = await client.PostAsync("en/api/json/forgot", new StringContent(GetQueryRequestParameters(parameterlist).Remove(0, 1), Encoding.UTF8, "application/x-www-form-urlencoded"));
+                    return response.IsSuccessStatusCode;
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(GetType() + " Issue logging in", e);
                 return false;
             }
         }

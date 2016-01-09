@@ -42,13 +42,13 @@
                             Style="{StaticResource ButtonStyle}"
                             Margin="12,0,12,10"
                     Foreground="White" TabIndex="3" IsTabStop="True"/>
-            <!--<HyperlinkButton HorizontalAlignment="Center" Command="{Binding ForgotCommand}">
+            <HyperlinkButton HorizontalAlignment="Center" Command="{Binding ForgotCommand}">
                 <TextBlock  FontSize="15" Foreground="White">
                         <Underline>
                             <Run Text="Forgot password?"/>
                         </Underline>
                 </TextBlock>
-            </HyperlinkButton>-->
+            </HyperlinkButton>
             <Rectangle Fill="Transparent" Height="{Binding RectangleHeight, Mode=TwoWay}"/>
         </StackPanel>
     </Grid>

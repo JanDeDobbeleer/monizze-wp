@@ -54,6 +54,7 @@ namespace Monizze.ViewModel
             });
             ForgotCommand = new RelayCommand(async () =>
             {
+                var response = await _client.ResetPassword("0470598580");
                 var dialog = new MessageDialog("Check back soon :-)");
                 await dialog.ShowAsync();
             });

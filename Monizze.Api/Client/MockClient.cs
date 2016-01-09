@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Monizze.Api.Model;
 
@@ -10,6 +9,11 @@ namespace Monizze.Api.Client
         public Task<bool> Login(string email, string password)
         {
             return new Task<bool>(() => true);
+        }
+
+        public Task<bool> ResetPassword(string userIdentifier)
+        {
+            return Task.Factory.StartNew(() => true);
         }
 
         public Task<Account> GetAccount()
